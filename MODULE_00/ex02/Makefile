@@ -1,7 +1,7 @@
 ###VARIABLES###
 
 # name of the executable
-NAME = phone_book
+NAME = account_manager
 
 # compilator and compilation flags
 CC = c++
@@ -14,7 +14,7 @@ INC_DIR = ./include/
 
 # files
 FILES = tests
-INC_FILES = acount
+INC_FILES = Account
 
 SRC = $(addprefix $(SRC_DIR), $(addsuffix .cpp, $(FILES) $(INC_FILES)))
 OBJ = $(patsubst $(SRC_DIR)%.cpp, $(OBJ_DIR)%.o, $(SRC))
