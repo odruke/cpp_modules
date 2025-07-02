@@ -2,7 +2,6 @@
 
 PhoneBook::PhoneBook(void)
 {
-	this->n_contacts = 0;
 	FullMemory = false;
 	return;
 }
@@ -16,7 +15,7 @@ bool	PhoneBook::FullContacts(void)
 {
 	std::string prompt;
 	std::cout << "MEMORY FULL! Warning:"
-	<< " adding a new contact will reset the contact n. " << n_contacts + 1 << ".\n"
+	<< " adding a new contact will reset the contact n. " << Contact::getNbContacts() << ".\n"
 	<< std::endl;
 	std::cout << "You want to delete the old contact and enter a new one?" << std::endl;
 	std::cout << "[YES]|[NO]";
@@ -36,16 +35,20 @@ bool	PhoneBook::FullContacts(void)
 }
 void	PhoneBook::AddContact(void)
 {
-	if (n_contacts > 7){
+	int nb = Contact::getNbContacts();
+
+	if (nb > 7){
 		FullMemory = true;
-		this->n_contacts = 0;
+		Contact::setNbContacts(0);
+		nb = 0;
 	}
-	if (FullMemory)
+	if (FullMemory){
 		if (PhoneBook::FullContacts())
 			return;
-	Contact contact(n_contacts);
-	this->contacts[n_contacts] = contact;
-	this->n_contacts++;
+	}
+	Contact contact(nb);
+	this->contacts[nb] = contact;
+	Contact::setNbContacts(nb + 1);
 }
 
 void	PhoneBook::DisplayContacts(void)
@@ -56,7 +59,7 @@ void	PhoneBook::DisplayContacts(void)
 	if (this->FullMemory)
 		contactCounter = 8;
 	else
-		contactCounter = this->n_contacts;
+		contactCounter = Contact::getNbContacts();
 	if (!contactCounter){
 		std::cout << "The Phone book is empty. Press enter to continue"
 		<< std::endl;
@@ -75,10 +78,10 @@ void	PhoneBook::DisplayContacts(void)
 
 	for (int i = 0; i < contactCounter; i++){
 		std::cout
-		<< "|" << std::setw(10) << std::right << contacts[i].GetField(IDX)
-		<< "|" << std::setw(10) << std::right << contacts[i].GetField(FIRSTNAME)
-		<< "|" << std::setw(10) << std::right << contacts[i].GetField(LASTNAME)
-		<< "|" << std::setw(10) << std::right << contacts[i].GetField(NICKNAME)
+		<< "|" << std::setw(10) << std::right << contacts[i].getField(IDX)
+		<< "|" << std::setw(10) << std::right << contacts[i].getField(FIRSTNAME)
+		<< "|" << std::setw(10) << std::right << contacts[i].getField(LASTNAME)
+		<< "|" << std::setw(10) << std::right << contacts[i].getField(NICKNAME)
 		<< "|" << std::endl;
 	}
 
@@ -100,7 +103,7 @@ void	PhoneBook::SearchContact(void)
 	if (this->FullMemory)
 		contactCounter = 8;
 	else
-		contactCounter = this->n_contacts;
+		contactCounter = Contact::getNbContacts();
 	do{
 		inputOk = true;
 		std::cout << "Type an index contact to show info, or press enter to return to menu: ";

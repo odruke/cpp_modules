@@ -10,19 +10,20 @@
 
 class PhoneBook
 {
-private:
+	public:
 
-	Contact	contacts[8];
-	int		n_contacts;
-	bool	FullMemory;
-
-public:
 	PhoneBook();
 	~PhoneBook();
 	void	AddContact(void);
 	void	DisplayContacts(void);
 	void	SearchContact(void);
 	bool	FullContacts(void);
+
+private:
+
+	Contact	contacts[8];
+	bool	FullMemory;
+
 };
 
 #endif

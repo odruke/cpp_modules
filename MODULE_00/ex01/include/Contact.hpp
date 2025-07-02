@@ -20,23 +20,27 @@ typedef enum e_ContactMember
 
 class Contact
 {
-private:
 
-	std::string FirstName;
-	std::string LastName;
-	std::string NickName;
-	std::string	PhoneNumber;
-	std::string DarkestSecret;
-	int			idx;
-
-	typedef std::string Contact::* FieldPtr;
-public:
+	public:
 	Contact();
 	Contact(int ide);
 	~Contact();
 	void		NewContact(int ide);
 	void		PrintContact();
-	std::string GetField(e_ContactMember field) const;
+	std::string getField(e_ContactMember field) const;
+	static int	getNbContacts();
+	static void	setNbContacts(int newNb);
+
+private:
+
+	std::string _firstName;
+	std::string _lastName;
+	std::string _nickName;
+	std::string	_phoneNumber;
+	std::string _darkestSecret;
+	int			_idx;
+	static int	_nbContacts;
+
 };
 
 #endif
