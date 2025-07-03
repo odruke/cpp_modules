@@ -6,6 +6,10 @@ NAME = phone_book
 # compilator and compilation flags
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -g -std=c++98
+SPC = -DSPACER=\'$(SPACER)\'
+
+# conditional variable. [make SPACER=value] to change SPACER value at compilation
+SPACER ?= '.'
 
 # directories
 SRC_DIR = ./src/
@@ -34,7 +38,7 @@ $(NAME): $(OBJ)
 $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp | $(OBJ_DIR)
 	@mkdir -p $(dir $@)
 	@printf "Compiling: %s                                    \r" $<
-	@$(CC) $(CFLAGS) -I$(INC_DIR) -c $< -o $@
+	@$(CC) $(CFLAGS) -I$(INC_DIR) $(SPC) -c $< -o $@
 
 $(OBJ_DIR):
 	printf "Starting compilation..."

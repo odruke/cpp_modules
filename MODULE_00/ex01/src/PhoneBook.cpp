@@ -2,7 +2,7 @@
 
 PhoneBook::PhoneBook(void)
 {
-	FullMemory = false;
+	_FullMemory = false;
 	return;
 }
 
@@ -15,7 +15,7 @@ bool	PhoneBook::FullContacts(void)
 {
 	std::string prompt;
 	std::cout << "MEMORY FULL! Warning:"
-	<< " adding a new contact will reset the contact n. " << Contact::getNbContacts() << ".\n"
+	<< " adding a new contact will reset the contact n. " << Contact::getNbContacts() + 1 << ".\n"
 	<< std::endl;
 	std::cout << "You want to delete the old contact and enter a new one?" << std::endl;
 	std::cout << "[YES]|[NO]";
@@ -38,16 +38,16 @@ void	PhoneBook::AddContact(void)
 	int nb = Contact::getNbContacts();
 
 	if (nb > 7){
-		FullMemory = true;
+		_FullMemory = true;
 		Contact::setNbContacts(0);
 		nb = 0;
 	}
-	if (FullMemory){
+	if (_FullMemory){
 		if (PhoneBook::FullContacts())
 			return;
 	}
 	Contact contact(nb);
-	this->contacts[nb] = contact;
+	this->_contacts[nb] = contact;
 	Contact::setNbContacts(nb + 1);
 }
 
@@ -56,7 +56,8 @@ void	PhoneBook::DisplayContacts(void)
 	std::string tmp;
 	int			contactCounter;
 
-	if (this->FullMemory)
+
+	if (this->_FullMemory)
 		contactCounter = 8;
 	else
 		contactCounter = Contact::getNbContacts();
@@ -66,29 +67,37 @@ void	PhoneBook::DisplayContacts(void)
 		std::getline(std::cin, tmp);
 		return;
 	}
-	std::cout << "|" << "..........";
-	std::cout << "|" << "..........";
-	std::cout << "|" << "..........";
-	std::cout << "|" << ".........." << "|" << std::endl;
+	std::cout << std::setfill(SPACER)
+		<< "|" << std::setw(11)
+		<< "|" << std::setw(11)
+		<< "|" << std::setw(11)
+		<< "|" << std::setw(11)
+		<< "|" << std::endl;
+
 	std::cout << "|  INDEX   |FIRST NAME|LAST NAME | NICKNAME |" << std::endl;
-	std::cout << "|" << "..........";
-	std::cout << "|" << "..........";
-	std::cout << "|" << "..........";
-	std::cout << "|" << ".........." << "|" << std::endl;
+
+	std::cout
+		<< "|" << std::setw(11)
+		<< "|" << std::setw(11)
+		<< "|" << std::setw(11)
+		<< "|" << std::setw(11)
+		<< "|" << std::setfill(' ') << std::endl;
 
 	for (int i = 0; i < contactCounter; i++){
 		std::cout
-		<< "|" << std::setw(10) << std::right << contacts[i].getField(IDX)
-		<< "|" << std::setw(10) << std::right << contacts[i].getField(FIRSTNAME)
-		<< "|" << std::setw(10) << std::right << contacts[i].getField(LASTNAME)
-		<< "|" << std::setw(10) << std::right << contacts[i].getField(NICKNAME)
+		<< "|" << std::setw(10) << std::right << _contacts[i].getField(IDX)
+		<< "|" << std::setw(10) << std::right << _contacts[i].getField(FIRSTNAME)
+		<< "|" << std::setw(10) << std::right << _contacts[i].getField(LASTNAME)
+		<< "|" << std::setw(10) << std::right << _contacts[i].getField(NICKNAME)
 		<< "|" << std::endl;
 	}
 
-	std::cout << "|" << "..........";
-	std::cout << "|" << "..........";
-	std::cout << "|" << "..........";
-	std::cout << "|" << ".........." << "|\n\n" << std::endl;
+	std::cout << std::setfill(SPACER)
+		<< "|" << std::setw(11)
+		<< "|" << std::setw(11)
+		<< "|" << std::setw(11)
+		<< "|" << std::setw(11)
+		<< "|" << std::setfill(' ') << "\n\n"<< std::endl;
 
 	PhoneBook::SearchContact();
 }
@@ -100,7 +109,7 @@ void	PhoneBook::SearchContact(void)
 	bool		inputOk = true;
 	int			contactCounter;
 
-	if (this->FullMemory)
+	if (this->_FullMemory)
 		contactCounter = 8;
 	else
 		contactCounter = Contact::getNbContacts();
@@ -121,5 +130,5 @@ void	PhoneBook::SearchContact(void)
 		}
 		}while(!inputOk);
 		std::cout << std::endl;
-		this->contacts[idx - 1].PrintContact();
+		this->_contacts[idx - 1].PrintContact();
 }

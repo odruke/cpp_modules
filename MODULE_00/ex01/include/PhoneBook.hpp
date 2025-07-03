@@ -7,6 +7,9 @@
 #include <iostream>
 #include <sstream>
 #include <iomanip>
+#ifndef SPACER
+# define SPACER '.'
+#endif
 
 class PhoneBook
 {
@@ -21,8 +24,8 @@ class PhoneBook
 
 private:
 
-	Contact	contacts[8];
-	bool	FullMemory;
+	Contact	_contacts[8];
+	bool	_FullMemory;
 
 };
 

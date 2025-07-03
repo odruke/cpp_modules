@@ -18,6 +18,7 @@ int	main()
 	std::string command;
 	std::string tmp;
 
+	std::cout << "\033[2J\033[1;1H";
 	while (1)
 	{
 		MainPrompt();
