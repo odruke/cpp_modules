@@ -1,7 +1,7 @@
 ###VARIABLES###
 
 # name of the executable
-NAME = war
+NAME = brains
 
 # compilator and compilation flags
 CC = c++
@@ -10,15 +10,12 @@ CFLAGS = -Wall -Werror -Wextra -g -std=c++98
 # directories
 SRC_DIR = ./src/
 OBJ_DIR = $(SRC_DIR)target/
-INC_DIR = ./include/
 
 # files
 FILES = main
-INC_FILES = Weapon HumanA HumanB
 
-SRC = $(addprefix $(SRC_DIR), $(addsuffix .cpp, $(FILES) $(INC_FILES)))
+SRC = $(addprefix $(SRC_DIR), $(addsuffix .cpp, $(FILES)))
 OBJ = $(patsubst $(SRC_DIR)%.cpp, $(OBJ_DIR)%.o, $(SRC))
-INC = $(addprefix $(INC_DIR)%.hpp, $(INC_FILES))
 
 
 
@@ -34,7 +31,7 @@ $(NAME): $(OBJ)
 $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp | $(OBJ_DIR)
 	@mkdir -p $(dir $@)
 	@printf "Compiling: %s                                    \r" $<
-	@$(CC) $(CFLAGS) -I$(INC_DIR) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJ_DIR):
 	printf "Starting compilation..."
@@ -56,11 +53,11 @@ compilation_success:
 	@echo "│ ██████████ █████ █████    █████     ████████ │"
 	@echo "│░░███░░░░░█░░███ ░░███   ███░░░███  ███░░░░███│"
 	@echo "│ ░███  █ ░  ░░███ ███   ███   ░░███░░░    ░███│"
-	@echo "│ ░██████     ░░█████   ░███    ░███   ██████░ │"
-	@echo "│ ░███░░█      ███░███  ░███    ░███  ░░░░░░███│"
-	@echo "│ ░███ ░   █  ███ ░░███ ░░███   ███  ███   ░███│"
-	@echo "│ ██████████ █████ █████ ░░░█████░  ░░████████ │"
-	@echo "│░░░░░░░░░░ ░░░░░ ░░░░░    ░░░░░░    ░░░░░░░░  │"
+	@echo "│ ░██████     ░░█████   ░███    ░███   ███████ │"
+	@echo "│ ░███░░█      ███░███  ░███    ░███  ███░░░░  │"
+	@echo "│ ░███ ░   █  ███ ░░███ ░░███   ███  ███      █│"
+	@echo "│ ██████████ █████ █████ ░░░█████░  ░██████████│"
+	@echo "│░░░░░░░░░░ ░░░░░ ░░░░░    ░░░░░░   ░░░░░░░░░░ │"
 	@echo "└──────────────────────────────────────────────┘"
 
 .PHONY: clean fclean re all compilation_success
