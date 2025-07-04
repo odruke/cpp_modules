@@ -1,6 +1,8 @@
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
+// void	SafeGetLine(std::string storage);
+
 void	MainPrompt(void)
 {
 		std::cout << "Please, type a command to begin:\n" << std::endl;
@@ -12,6 +14,7 @@ void	MainPrompt(void)
 		<< std::setw(12) << std::right << ">[EXIT]" << std::endl;
 		std::cout << std::setfill(' ') << "\n->";
 }
+
 int	main()
 {
 	PhoneBook phoneBook;
@@ -23,7 +26,7 @@ int	main()
 	{
 		MainPrompt();
 
-		std::getline(std::cin, command);
+		SafeGetLine(command);
 		std::cout << "\033[2J\033[1;1H";
 		if (command == "ADD"){
 			phoneBook.AddContact();
@@ -36,7 +39,7 @@ int	main()
 		else{
 			std::cout << "wrong command. Press enter to continue"
 			<< std::endl;
-			std::getline(std::cin, tmp);
+			SafeGetLine(tmp);
 		}
 		std::cout << "\033[2J\033[1;1H";
 	}

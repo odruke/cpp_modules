@@ -17,7 +17,7 @@ OBJ_DIR = $(SRC_DIR)target/
 INC_DIR = ./include/
 
 # files
-FILES = main
+FILES = main SafeGetLine
 INC_FILES = PhoneBook Contact
 
 SRC = $(addprefix $(SRC_DIR), $(addsuffix .cpp, $(FILES) $(INC_FILES)))

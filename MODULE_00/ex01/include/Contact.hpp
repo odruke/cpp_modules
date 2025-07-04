@@ -8,6 +8,8 @@
 #include <string>
 #include <cctype>
 
+void	SafeGetLine(std::string& storage);
+
 typedef enum e_ContactMember
 {
 	FIRSTNAME,

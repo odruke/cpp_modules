@@ -15,6 +15,43 @@ bool	ValidPhone(std::string number)
 	}
 	return true;
 }
+
+bool	IsBlank(int	c)
+{
+	if (c == 32 || c == 9 ||(c >= 11 && c <= 13))
+		return true;
+	return false;
+}
+
+bool	OnlyBlank(std::string name)
+{
+	if (name.empty())
+		return true;
+	for (size_t i = 0; i < name.length(); i++){
+		if (!IsBlank(name[i]))
+			return false;
+	}
+	return true;
+}
+
+bool	ValidName(std::string& name)
+{
+	size_t	i;
+
+	if (name.empty())
+		return true;
+	for (i = 0; i < name.length(); i++){
+		if (!IsBlank(name[i]))
+			break;
+	}
+	if (i == name.length()){
+		std::cout << "Only blank spaces not admited as a valid name" << std::endl;
+		return false;
+	}
+	if (i)
+		name = name.substr(i, name.length() - i);
+	return true;
+}
 Contact::Contact(void)
 {
 	_firstName = "";
@@ -42,30 +79,32 @@ void Contact::NewContact(int	ide)
 	/*loop the prompt until the user inputs a valid name*/
 	do {
 		std::cout << "First name: ";
-		std::getline(std::cin, _firstName);
+		SafeGetLine(_firstName);
 		if (_firstName.empty())
 			std::cout << "We need at least a name!" << std::endl;
-	}while (_firstName.empty());
+	}while (_firstName.empty() || !ValidName(_firstName));
 
-	std::cout << "Last name: ";
-	std::getline(std::cin, _lastName);
+	do{
+		std::cout << "Last name: ";
+		SafeGetLine(_lastName);
+	}while (!ValidName(_lastName));
 
-	std::cout << "Nickname: ";
-	std::getline(std::cin, _nickName);
+	do{
+		std::cout << "Nickname: ";
+		SafeGetLine(_nickName);
+	}while (!ValidName(_nickName));
+
 
 	/*loop the prompt until the user inputs a valid number*/
-	bool OnlyNumbers;
 	do{
-		OnlyNumbers = true;
 		std::cout << "Phone number: ";
-		std::getline(std::cin, _phoneNumber);
-		OnlyNumbers = ValidPhone(_phoneNumber);
-		if (!OnlyNumbers)
+		SafeGetLine(_phoneNumber);
+		if (!ValidPhone(_phoneNumber))
 			std::cout << "Please enter a valid phone number" << std::endl;
-	}while (!OnlyNumbers);
+	}while (!ValidPhone(_phoneNumber));
 
 	std::cout << "Enter your darkest secret: ";
-	std::getline(std::cin, _darkestSecret);
+	SafeGetLine(_darkestSecret);
 	this->_idx = ide;
 }
 
@@ -78,7 +117,7 @@ void	Contact::PrintContact(void)
 	std::cout << "Phone numer: " << this->_phoneNumber << std::endl;
 	std::cout << "Your darkest secret is: " << this->_darkestSecret << std::endl;
 	std::cout << "\n\npress enter to continue" << std::endl;
-	std::getline(std::cin, tmp);
+	SafeGetLine(tmp);
 }
 
 std::string Contact::getField(e_ContactMember field) const

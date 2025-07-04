@@ -11,6 +11,8 @@
 # define SPACER '.'
 #endif
 
+void	SafeGetLine(std::string& storage);
+
 class PhoneBook
 {
 	public:

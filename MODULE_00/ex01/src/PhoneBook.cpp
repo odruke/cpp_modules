@@ -21,7 +21,7 @@ bool	PhoneBook::FullContacts(void)
 	std::cout << "[YES]|[NO]";
 
 	do{
-		std::getline(std::cin, prompt);
+		SafeGetLine(prompt);
 		if (!prompt.compare("YES")){
 			std::cout << "\033[2J\033[1;1H";
 			return false;
@@ -64,7 +64,7 @@ void	PhoneBook::DisplayContacts(void)
 	if (!contactCounter){
 		std::cout << "The Phone book is empty. Press enter to continue"
 		<< std::endl;
-		std::getline(std::cin, tmp);
+		SafeGetLine(tmp);
 		return;
 	}
 	std::cout << std::setfill(SPACER)
@@ -116,7 +116,7 @@ void	PhoneBook::SearchContact(void)
 	do{
 		inputOk = true;
 		std::cout << "Type an index contact to show info, or press enter to return to menu: ";
-		std::getline(std::cin, idxInput);
+		SafeGetLine(idxInput);
 		if (idxInput.empty())
 			return;
 		std::stringstream index(idxInput);
