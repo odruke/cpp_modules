@@ -7,9 +7,10 @@
 class Weapon
 {
 private:
-	std::string type;
+	std::string _type;
 public:
 	Weapon();
+	Weapon(std::string newType);
 	~Weapon();
 
 	std::string	getType()const;
