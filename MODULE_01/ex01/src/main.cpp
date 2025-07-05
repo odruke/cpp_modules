@@ -1,5 +1,8 @@
 #include "Zombie.hpp"
 
+/*The number of zombies can be changed at compilation
+ using make NBZOMBIES=n (n as the number desired)*/
+
 int	main()
 {
 	std::cout << "the horde is coming!" << std::endl;

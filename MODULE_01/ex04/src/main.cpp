@@ -20,6 +20,7 @@ int	main(int ac, char **av)
 			<< "./sedplus [filename.txt] [\"to replace\"] [\"to be replaced\"]" << std::endl;
 			return EXIT_FAILURE;
 	}
+
 	filename = av[1];
 	if (filename.empty()){
 		std::cout << "no file to open" << std::endl;
@@ -30,13 +31,14 @@ int	main(int ac, char **av)
 		return EXIT_FAILURE;
 	}
 
-	std::ifstream file(filename.c_str());
 	s1 = av[2];
 	s2 = av[3];
 	if (s1.empty()){
 		std::cout << "no text to find inputed" << std::endl;
 		return EXIT_FAILURE;
 	}
+
+	std::ifstream file(filename.c_str());
 	if (!file){
 		std::cout << "couldn't open the file" << std::endl;
 		return EXIT_FAILURE;

@@ -8,7 +8,9 @@ int	main(int ac, char **av)
 	Harl 		harl;
 	std::string	input;
 	if (ac != 2){
-		std::cout << "Wrong parameters. Usage:\n./Harl [levle]" << std::endl;
+		std::cout
+			<< "Wrong parameters. Usage:\n./Harl [level]\n(DEBUG, INFO, WARNING, ERROR)"
+			<< std::endl;
 		return EXIT_FAILURE;
 	}
 	input = av[1];
