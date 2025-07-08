@@ -40,7 +40,7 @@ void	Harl::complain(std::string level)
 		if (!levels[i].compare(level))
 			break;
 
-	/*in this switch statement we don't use break
+	/*in this switch statement we don't break
 	after the case, for that we use [[fallthrough]] instead
 	of break, but is a c++17 feature and therefore not allowed.
 	The compilator in c++98 will recognize the comment //fall trough
@@ -58,9 +58,7 @@ void	Harl::complain(std::string level)
 		//fall through
 	case 3:
 		(this->*funtionPTR[3])();
-		//fall through
 		break;
-
 	default:
 		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 		break;
