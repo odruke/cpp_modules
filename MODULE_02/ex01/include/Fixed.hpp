@@ -1,6 +1,7 @@
 #ifndef FIXED_HPP
 # define FIXED_HPP
 #include <iostream>
+#include <cmath>
 
 class Fixed
 {
@@ -10,6 +11,8 @@ private:
 public:
 	Fixed();
 	Fixed(Fixed const & copie);
+	Fixed(const int);
+	Fixed(const float);
 	Fixed &	 operator=(Fixed const & add);
 	~Fixed();
 

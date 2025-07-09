@@ -12,6 +12,16 @@ Fixed::Fixed(Fixed const & copie)
 	*this = copie;
 }
 
+Fixed::Fixed(const int)
+{
+
+}
+
+Fixed::Fixed(const float)
+{
+
+}
+
 Fixed& Fixed::operator=(Fixed const & add)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
