@@ -7,7 +7,7 @@ class Fixed
 {
 private:
 	int					_bitValue;
-	static const int	_fractBits = 8;
+	static const int	_fractBits;
 public:
 	Fixed();
 	Fixed(Fixed const & copie);
@@ -23,5 +23,7 @@ public:
 	float	toFloat( void ) const;
 	int		toInt( void ) const;
 };
+
+std::ostream & operator<<(std::ostream& o, Fixed const & value );
 
 #endif

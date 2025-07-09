@@ -1,7 +1,7 @@
 ###VARIABLES###
 
 # name of the executable
-NAME = canon
+NAME = fixed
 
 # compilator and compilation flags
 CC = c++
