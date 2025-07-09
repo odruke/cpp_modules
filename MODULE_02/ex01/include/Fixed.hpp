@@ -6,19 +6,22 @@
 class Fixed
 {
 private:
-	int					_value;
-	static const int	_nbBits = 8;
+	int					_bitValue;
+	static const int	_fractBits = 8;
 public:
 	Fixed();
 	Fixed(Fixed const & copie);
-	Fixed(const int);
-	Fixed(const float);
+	Fixed(const int value);
+	Fixed(const float value);
 	Fixed &	 operator=(Fixed const & add);
 	~Fixed();
 
 
 	int getRawBits( void ) const;
 	void setRawBits( int const raw );
+
+	float	toFloat( void ) const;
+	int		toInt( void ) const;
 };
 
 #endif

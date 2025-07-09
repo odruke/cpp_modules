@@ -5,8 +5,8 @@
 class Fixed
 {
 private:
-	int					_value;
-	static const int	_nbBits = 8;
+	int					_bitValue;
+	static const int	_fractBits = 8;
 public:
 	Fixed();
 	Fixed(Fixed const & copie);
