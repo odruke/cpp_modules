@@ -3,9 +3,13 @@
 # name of the executable
 NAME = fixed
 
+# conditional variable. [make DEBUG=1] to print expanded tests
+DEBUG ?= 0
+
 # compilator and compilation flags
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -g -std=c++98
+DB = -DDEBUG=$(DEBUG)
 
 # directories
 SRC_DIR = ./src/
@@ -26,6 +30,9 @@ INC = $(addprefix $(INC_DIR)%.hpp, $(INC_FILES))
 
 all:$(NAME)
 
+extra:
+	@$(MAKE) DEBUG=1
+
 $(NAME): $(OBJ)
 	@$(CC) $(OBJ) -o $@
 	@$(MAKE) compilation_success
@@ -34,7 +41,7 @@ $(NAME): $(OBJ)
 $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp | $(OBJ_DIR)
 	@mkdir -p $(dir $@)
 	@printf "Compiling: %s                                    \r" $<
-	@$(CC) $(CFLAGS) -I$(INC_DIR) -c $< -o $@
+	@$(CC) $(CFLAGS) -I$(INC_DIR) $(DB) -c $< -o $@
 
 $(OBJ_DIR):
 	printf "Starting compilation..."
@@ -64,4 +71,4 @@ compilation_success:
 	@echo "└──────────────────────────────────────────────┘"
 
 
-.PHONY: clean fclean re all compilation_success
+.PHONY: clean fclean re all compilation_success extra

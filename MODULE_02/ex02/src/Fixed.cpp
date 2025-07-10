@@ -37,7 +37,7 @@ Fixed::~Fixed()
 
 Fixed& Fixed::operator=(Fixed const & add)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	// std::cout << "Copy assignment operator called" << std::endl;
 	this->_bitValue = add.getRawBits();
 	return *this;
 }
@@ -134,7 +134,7 @@ as we doubled the bits by multipling*/
 Fixed	Fixed::operator*(Fixed const & value)
 {
 	Fixed	res;
-	long long int tmp = (long long int )this->_bitValue / value.getRawBits();
+	long long int tmp = (long long int )this->_bitValue * value.getRawBits();
 	res.setRawBits((int)(tmp >> this->_fractBits));
 	return res;
 }
