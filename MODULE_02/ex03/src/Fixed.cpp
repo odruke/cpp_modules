@@ -10,10 +10,9 @@ Fixed::Fixed() : _bitValue(0)
 	// std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(Fixed const & copie)
+Fixed::Fixed(Fixed const & copie) : _bitValue(copie.getRawBits())
 {
 	// std::cout << "Copy constructor called" << std::endl;
-	*this = copie;
 }
 /*the bitwise operator will displace the bits 8 positions and setting
 to 0 the ones left on the right*/
@@ -118,7 +117,7 @@ Fixed	Fixed::operator+(Fixed const & value)
 {
 	Fixed res;
 	res.setRawBits(this->_bitValue + value.getRawBits());
-	return res.toFloat();
+	return res;
 }
 
 Fixed	Fixed::operator-(Fixed const & value)

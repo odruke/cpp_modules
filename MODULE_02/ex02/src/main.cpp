@@ -148,15 +148,15 @@ int	main()
 	std::cout << std::setw(13) << std::left << big / d << "big / d (1000.25 / 1)" << std::endl;
 
 	// Comparison tests
-	std::cout << std::setfill('-') << std::setw(13) << std::left << (c == d) << "c == d (2.5 == 1)" << std::endl;
-	std::cout << std::setw(13) << std::left << (c != d) << "c != d (2.5 != 1)" << std::endl;
-	std::cout << std::setw(13) << std::left << (c > d) << "c > d (2.5 > 1)" << std::endl;
-	std::cout << std::setw(13) << std::left << (c < d) << "c < d (2.5 < 1)" << std::endl;
-	std::cout << std::setw(13) << std::left << (c >= d) << "c >= d (2.5 >= 1)" << std::endl;
-	std::cout << std::setw(13) << std::left << (c <= d) << "c <= d (2.5 <= 1)" << std::endl;
-	std::cout << std::setw(13) << std::left << (c == c) << "c == c (2.5 == 2.5)" << std::endl;
-	std::cout << std::setw(13) << std::left << (neg < zero) << "neg < zero (-2.5 < 0)" << std::endl;
-	std::cout << std::setw(13) << std::left << (neg > zero) << "neg > zero (-2.5 > 0)" << std::endl;
+	std::cout << std::setfill('-') << std::setw(13) << std::left << ((c == d) ? "true" : "false") << "c == d (2.5 == 1)" << std::endl;
+	std::cout << std::setw(13) << std::left << ((c != d) ? "true" : "false") << "c != d (2.5 != 1)" << std::endl;
+	std::cout << std::setw(13) << std::left << ((c > d) ? "true" : "false") << "c > d (2.5 > 1)" << std::endl;
+	std::cout << std::setw(13) << std::left << ((c < d) ? "true" : "false") << "c < d (2.5 < 1)" << std::endl;
+	std::cout << std::setw(13) << std::left << ((c >= d) ? "true" : "false") << "c >= d (2.5 >= 1)" << std::endl;
+	std::cout << std::setw(13) << std::left << ((c <= d) ? "true" : "false") << "c <= d (2.5 <= 1)" << std::endl;
+	std::cout << std::setw(13) << std::left << ((c == c) ? "true" : "false") << "c == c (2.5 == 2.5)" << std::endl;
+	std::cout << std::setw(13) << std::left << ((neg < zero) ? "true" : "false") << "neg < zero (-2.5 < 0)" << std::endl;
+	std::cout << std::setw(13) << std::left << ((neg > zero) ? "true" : "false") << "neg > zero (-2.5 > 0)" << std::endl;
 
 	// Increment/decrement edge cases
 	std::cout << std::setw(13) << std::left << ++neg << "preincrement neg (-2.5)" << std::endl;

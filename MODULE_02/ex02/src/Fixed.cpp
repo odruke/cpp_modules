@@ -118,7 +118,7 @@ Fixed	Fixed::operator+(Fixed const & value)
 {
 	Fixed res;
 	res.setRawBits(this->_bitValue + value.getRawBits());
-	return res.toFloat();
+	return res;
 }
 
 Fixed	Fixed::operator-(Fixed const & value)

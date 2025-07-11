@@ -8,8 +8,8 @@ Point & Point::operator=(Point const &) {return *this;}
 Point::~Point() {}
 
 /*---------------GETTERS AND SETTERS---------------------*/
-Fixed	Point::getY(void) const {return this->_y;}
-Fixed	Point::getX(void) const {return this->_x;}
+const Fixed&	Point::getY(void) const {return this->_y;}
+const Fixed&	Point::getX(void) const {return this->_x;}
 
 
 

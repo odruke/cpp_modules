@@ -16,8 +16,8 @@ public:
 	Point & operator=(Point const &);
 	~Point( void );
 
-	Fixed	getY( void ) const;
-	Fixed	getX( void ) const;
+	const Fixed&	getY( void ) const;
+	const Fixed&	getX( void ) const;
 };
 
 #endif
