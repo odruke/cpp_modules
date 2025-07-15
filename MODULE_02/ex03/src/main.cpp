@@ -43,7 +43,7 @@ int	main()
 	Point const a(2.25f, 1.59f);
 	Point const b(6.74f, 4.55f);
 	Point const c(1.42f, 7.98f);
-	const Point point(5.0f, 4.0f);//outside
+	const Point point(5.0f, 7.0f);//outside
 	// Point const point(2.0f, 4.0f);//inside
 
 
