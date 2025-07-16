@@ -3,12 +3,13 @@
 ClapTrap::ClapTrap(void)
 	: _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-	std::cout << "Welcome, vault hunter!" << std::endl;
+	std::cout << "ClapTrap default constructor called" << std::endl;
 }
+
 ClapTrap::ClapTrap(std::string name)
 	: _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-	std::cout << "Welcome, vault hunter!" << std::endl;
+	std::cout << "ClapTrap name constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const& add){*this = add;}
@@ -22,7 +23,10 @@ ClapTrap&	ClapTrap::operator=(ClapTrap const& add)
 	return *this;
 }
 
-ClapTrap::~ClapTrap(void){}
+ClapTrap::~ClapTrap(void)
+{
+	std::cout << "ClapTrap destructor called" << std::endl;
+}
 
 /* getters and setters */
 std::string	ClapTrap::getName(void){return this->_name;}
