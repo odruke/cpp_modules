@@ -5,29 +5,14 @@ int	main()//refactor main
 {
 	ClapTrap	clappy("clappy");
 	ScavTrap	scavy("skavy");
+	int			repairAmmout = 8;
 
-	clappy.attack("coughing baby");
-	clappy.takeDamage(9);
-	clappy.beRepaired(8);
-	clappy.takeDamage(8);
-	clappy.beRepaired(8);
-	clappy.takeDamage(8);
-	clappy.beRepaired(8);
-	clappy.takeDamage(8);
-	clappy.beRepaired(8);
-	clappy.takeDamage(7);
-	clappy.attack("coughing baby");
-	clappy.beRepaired(8);
-	clappy.takeDamage(7);
-	clappy.attack("coughing baby");
-	clappy.attack("coughing baby");
-	clappy.beRepaired(8);
-	clappy.takeDamage(7);
-	clappy.attack("coughing baby");
-	clappy.beRepaired(8);
-	clappy.takeDamage(7);
-	clappy.takeDamage(7);
-	clappy.beRepaired(8);
-	clappy.attack("coughing baby");
+	clappy.attack(scavy.getName());
+	scavy.takeDamage(clappy.getAttackDmg());
+	scavy.beRepaired(repairAmmout);
+	scavy.attack(clappy.getName());
+	clappy.takeDamage(scavy.getAttackDmg());
+	clappy.beRepaired(repairAmmout);
+	scavy.guardGate();
 
 }
