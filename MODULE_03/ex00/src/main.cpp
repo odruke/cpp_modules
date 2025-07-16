@@ -4,6 +4,8 @@ int	main()
 {
 	ClapTrap	clappy("clappy");
 
+	std::cout << "\n" << std::endl;
+
 	clappy.attack("coughing baby");
 	clappy.takeDamage(9);
 	clappy.beRepaired(8);
@@ -28,4 +30,5 @@ int	main()
 	clappy.beRepaired(8);
 	clappy.attack("coughing baby");
 
+	std::cout << "\n" << std::endl;
 }

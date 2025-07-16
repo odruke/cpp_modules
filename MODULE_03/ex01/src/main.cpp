@@ -7,6 +7,8 @@ int	main()//refactor main
 	ScavTrap	scavy("skavy");
 	int			repairAmmout = 8;
 
+	std::cout << "\n" << std::endl;
+
 	clappy.attack(scavy.getName());
 	scavy.takeDamage(clappy.getAttackDmg());
 	scavy.beRepaired(repairAmmout);
@@ -15,4 +17,5 @@ int	main()//refactor main
 	clappy.beRepaired(repairAmmout);
 	scavy.guardGate();
 
+	std::cout << "\n" << std::endl;
 }
