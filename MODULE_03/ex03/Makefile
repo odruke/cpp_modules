@@ -1,7 +1,7 @@
 ###VARIABLES###
 
 # name of the executable
-NAME = frag
+NAME = diamond
 
 # compilator and compilation flags
 CC = c++
@@ -14,7 +14,7 @@ INC_DIR = ./include/
 
 # files
 FILES = main
-INC_FILES = ClapTrap ScavTrap FragTrap
+INC_FILES = ClapTrap ScavTrap FragTrap DiamondTrap
 
 SRC = $(addprefix $(SRC_DIR), $(addsuffix .cpp, $(FILES) $(INC_FILES)))
 OBJ = $(patsubst $(SRC_DIR)%.cpp, $(OBJ_DIR)%.o, $(SRC))
@@ -56,11 +56,11 @@ compilation_success:
 	@echo "│ ██████████ █████ █████    █████     ████████ │"
 	@echo "│░░███░░░░░█░░███ ░░███   ███░░░███  ███░░░░███│"
 	@echo "│ ░███  █ ░  ░░███ ███   ███   ░░███░░░    ░███│"
-	@echo "│ ░██████     ░░█████   ░███    ░███   ███████ │"
-	@echo "│ ░███░░█      ███░███  ░███    ░███  ███░░░░  │"
-	@echo "│ ░███ ░   █  ███ ░░███ ░░███   ███  ███      █│"
-	@echo "│ ██████████ █████ █████ ░░░█████░  ░██████████│"
-	@echo "│░░░░░░░░░░ ░░░░░ ░░░░░    ░░░░░░   ░░░░░░░░░░ │"
+	@echo "│ ░██████     ░░█████   ░███    ░███   ██████░ │"
+	@echo "│ ░███░░█      ███░███  ░███    ░███  ░░░░░░███│"
+	@echo "│ ░███ ░   █  ███ ░░███ ░░███   ███  ███   ░███│"
+	@echo "│ ██████████ █████ █████ ░░░█████░  ░░████████ │"
+	@echo "│░░░░░░░░░░ ░░░░░ ░░░░░    ░░░░░░    ░░░░░░░░  │"
 	@echo "└──────────────────────────────────────────────┘"
 
 .PHONY: clean fclean re all compilation_success

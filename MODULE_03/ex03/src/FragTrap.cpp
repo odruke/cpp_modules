@@ -8,16 +8,16 @@ FragTrap::FragTrap(void) : ClapTrap()
 	std::cout << "FragTrap default constructor called" << std::endl;
 }
 
-FragTrap::FragTrap(std::string const& name) : ClapTrap()
+FragTrap::FragTrap(std::string const& name) : ClapTrap(name)
 {
 	this->_name = name;
 	this->_attackDamage = 30;
 	this->_energyPoints = 100;
 	this->_hitPoints = 100;
-	std::cout << "FragTrap default constructor called" << std::endl;
+	std::cout << "FragTrap constructor by name called" << std::endl;
 }
 
-FragTrap::FragTrap(FragTrap const& add): ClapTrap() {*this = add;}
+FragTrap::FragTrap(FragTrap const& add): ClapTrap(add) {*this = add;}
 
 FragTrap&	FragTrap::operator=(FragTrap const& add)
 {

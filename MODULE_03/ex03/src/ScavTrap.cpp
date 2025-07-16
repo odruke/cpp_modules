@@ -8,16 +8,16 @@ ScavTrap::ScavTrap(void) : ClapTrap()
 	std::cout << "ScavTrap default constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name): ClapTrap()
+ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 {
 	this->_name = name;
 	this->_attackDamage = 20;
 	this->_energyPoints = 50;
 	this->_hitPoints = 100;
-	std::cout << "ScavTrap name constructor called" << std::endl;
+	std::cout << "ScavTrap constructor by name called" << std::endl;
 }
 
-ScavTrap::ScavTrap(ScavTrap const& add): ClapTrap() {*this = add;}
+ScavTrap::ScavTrap(ScavTrap const& add): ClapTrap(add) {*this = add;}
 
 ScavTrap&	ScavTrap::operator=(ScavTrap const& add)
 {

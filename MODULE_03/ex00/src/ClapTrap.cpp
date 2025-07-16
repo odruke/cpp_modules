@@ -1,7 +1,7 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(void)
-	: _hitPoints(10), _energyPoints(10), _attackDamage(0)
+	: _name("original"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
 	std::cout << "Welcome, vault hunter!" << std::endl;
 }

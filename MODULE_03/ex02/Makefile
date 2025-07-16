@@ -1,7 +1,7 @@
 ###VARIABLES###
 
 # name of the executable
-NAME = diamond
+NAME = scav
 
 # compilator and compilation flags
 CC = c++
@@ -14,7 +14,7 @@ INC_DIR = ./include/
 
 # files
 FILES = main
-INC_FILES = ClapTrap ScavTrap FragTrap Diamond
+INC_FILES = ClapTrap ScavTrap FragTrap
 
 SRC = $(addprefix $(SRC_DIR), $(addsuffix .cpp, $(FILES) $(INC_FILES)))
 OBJ = $(patsubst $(SRC_DIR)%.cpp, $(OBJ_DIR)%.o, $(SRC))

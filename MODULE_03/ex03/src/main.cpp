@@ -1,12 +1,14 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main()
 {
 	ClapTrap	clappy("clappy");
 	ScavTrap	scavy("skavy");
 	FragTrap	fraggy("chtulhu destroyer of worlds");
+	DiamondTrap	weird("weirdo");
 
 	int			repairAmmout = 8;
 
@@ -46,4 +48,14 @@ int	main()
 	fraggy.highFivesGuys();
 	std::cout << "\n" << std::endl;
 
+
+	weird.FragTrap::attack("no one");
+	weird.ScavTrap::attack("nobody");
+	weird.takeDamage(0);
+	weird.beRepaired(repairAmmout);
+	weird.guardGate();
+	weird.highFivesGuys();
+	weird.whoAmI();
+
+	std::cout << "\n" << std::endl;
 }
