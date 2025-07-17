@@ -18,6 +18,7 @@ public:
 
 	using	ClapTrap::beRepaired;
 	using	ClapTrap::takeDamage;
-};
+	using	ScavTrap::attack;
 
+};
 #endif

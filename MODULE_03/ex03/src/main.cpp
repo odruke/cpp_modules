@@ -51,6 +51,7 @@ int	main()
 
 	weird.FragTrap::attack("no one");
 	weird.ScavTrap::attack("nobody");
+	weird.attack("nobody again");
 	weird.takeDamage(0);
 	weird.beRepaired(repairAmmout);
 	weird.guardGate();
