@@ -1,7 +1,7 @@
 ###VARIABLES###
 
 # name of the executable
-NAME = scav
+NAME = frag
 
 # compilator and compilation flags
 CC = c++

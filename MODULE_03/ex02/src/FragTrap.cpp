@@ -14,7 +14,7 @@ FragTrap::FragTrap(std::string const& name) : ClapTrap(name)
 	this->_attackDamage = 30;
 	this->_energyPoints = 100;
 	this->_hitPoints = 100;
-	std::cout << "FragTrap default constructor called" << std::endl;
+	std::cout << "FragTrap name constructor called" << std::endl;
 }
 
 FragTrap::FragTrap(FragTrap const& add): ClapTrap(add) {*this = add;}
