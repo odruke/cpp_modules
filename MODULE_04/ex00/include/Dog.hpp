@@ -1,7 +1,9 @@
 #ifndef DOG_HPP
 # define DOG_HPP
 
-class Dog
+#include "Animal.hpp"
+
+class Dog : public Animal
 {
 private:
 	/* data */

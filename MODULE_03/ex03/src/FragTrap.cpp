@@ -5,7 +5,8 @@ FragTrap::FragTrap(void) : ClapTrap()
 	this->_attackDamage = 30;
 	this->_energyPoints = 100;
 	this->_hitPoints = 100;
-	std::cout << "FragTrap default constructor called" << std::endl;
+	std::cout << MAGENTA << "FragTrap" << GREEN << " default constructor called" << RESET << std::endl;
+
 }
 
 FragTrap::FragTrap(std::string const& name) : ClapTrap(name)
@@ -14,7 +15,7 @@ FragTrap::FragTrap(std::string const& name) : ClapTrap(name)
 	this->_attackDamage = 30;
 	this->_energyPoints = 100;
 	this->_hitPoints = 100;
-	std::cout << "FragTrap constructor by name called" << std::endl;
+	std::cout << MAGENTA << "FragTrap" << GREEN << " constructor by name called" << RESET << std::endl;
 }
 
 FragTrap::FragTrap(FragTrap const& add): ClapTrap(add) {*this = add;}
@@ -30,7 +31,7 @@ FragTrap&	FragTrap::operator=(FragTrap const& add)
 
 FragTrap::~FragTrap(void)
 {
-	std::cout << "FragTrap destructor called" << std::endl;
+	std::cout << MAGENTA << "FragTrap"  << RED << " destructor called" << RESET << std::endl;
 }
 
 /* subject functions */
@@ -57,7 +58,7 @@ void	FragTrap::attack(const std::string& target)
 
 void	FragTrap::highFivesGuys(void)
 {
-	std::cout << this->_name << ": Gimme five!" << std::endl;
+	std::cout << CYAN << this->_name << RESET << ": Gimme five!" << std::endl;
 }
 
 

@@ -16,10 +16,10 @@ public:
 	ClapTrap&	operator=(ClapTrap const& add);
 	~ClapTrap(void);
 
-	std::string	getName(void);
-	int getHp(void);
-	int getEnergyP(void);
-	int getAttackDmg(void);
+	std::string	getName(void) const;
+	int getHp(void) const;
+	int getEnergyP(void) const;
+	int getAttackDmg(void) const;
 
 	void attack(const std::string& target);
 	void takeDamage(unsigned int amount);

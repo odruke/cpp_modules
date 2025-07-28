@@ -6,15 +6,19 @@
 int	main()
 {
 	ClapTrap	clappy("clappy");
+	std::cout << std::endl;
 	ScavTrap	scavy("skavy");
+	std::cout << std::endl;
 	FragTrap	fraggy("chtulhu destroyer of worlds");
+	std::cout << std::endl;
 	DiamondTrap	weird("weirdo");
 
 	int			repairAmmout = 8;
 
 	std::cout << "\n" << std::endl;
-
-	clappy.attack(scavy.getName());
+if (HISTORY)
+{
+		clappy.attack(scavy.getName());
 	std::cout << std::endl;
 	scavy.takeDamage(clappy.getAttackDmg());
 	std::cout << std::endl;
@@ -47,6 +51,18 @@ int	main()
 	std::cout << "\n" << std::endl;
 	fraggy.highFivesGuys();
 	std::cout << "\n" << std::endl;
+}
+
+
+	std::cout
+		<< weird.getName() << " hit points is: " << weird.getHp()
+		<< ", same as FragTrap: " << fraggy.getHp() << "\n" << std::endl;
+	std::cout
+		<< weird.getName() << " energy is: " << weird.getEnergyP()
+		<< ", same as ScavTrap: " << scavy.getEnergyP() << "\n" << std::endl;
+	std::cout
+		<< weird.getName() << " attack is: " << weird.getAttackDmg()
+		<< ", same as FragTrap: " << fraggy.getAttackDmg() << "\n" << std::endl;
 
 
 	weird.FragTrap::attack("no one");

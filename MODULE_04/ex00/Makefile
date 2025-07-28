@@ -1,7 +1,7 @@
 ###VARIABLES###
 
 # name of the executable
-NAME = clap
+NAME = animal
 
 # compilator and compilation flags
 CC = c++
@@ -14,7 +14,7 @@ INC_DIR = ./include/
 
 # files
 FILES = main
-INC_FILES = ClapTrap
+INC_FILES = Animal Cat Dog
 
 SRC = $(addprefix $(SRC_DIR), $(addsuffix .cpp, $(FILES) $(INC_FILES)))
 OBJ = $(patsubst $(SRC_DIR)%.cpp, $(OBJ_DIR)%.o, $(SRC))

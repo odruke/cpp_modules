@@ -3,7 +3,7 @@
 
 #include "Animal.hpp"
 
-class Cat
+class Cat : public Animal
 {
 private:
 	/* data */
@@ -11,6 +11,5 @@ public:
 	Cat(/* args */);
 	~Cat();
 };
-
 
 #endif

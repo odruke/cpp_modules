@@ -4,20 +4,25 @@ DiamondTrap::DiamondTrap(void)
 	: ClapTrap("defDiamond_clap_name"), ScavTrap(), FragTrap(), _name("defDiamond")
 {
 	this->_hitPoints = FragTrap::_hitPoints;
-	this->_energyPoints = ScavTrap::_energyPoints;
 	this->_attackDamage = FragTrap::_attackDamage;
+	this->_energyPoints = ScavTrap::_energyPoints;
 
-	std::cout << "DiamondTrap default constructor called" << std::endl;
+	std::cout << CYAN << "DiamondTrap" << GREEN << " default constructor called" << RESET << std::endl;
 }
 
 DiamondTrap::DiamondTrap(std::string const& name)
-	: ClapTrap(name + "_clap_name"), ScavTrap(), FragTrap(), _name(name)
+	: ClapTrap(name + "_clap_name"), ScavTrap(name + "_Scav_name"), FragTrap(name + "_Frag_name"), _name(name)
 {
 	this->_hitPoints = FragTrap::_hitPoints;
-	this->_energyPoints = ScavTrap::_energyPoints;
+	std::cout << this->_hitPoints << " : " << FragTrap::_hitPoints << std::endl;
 	this->_attackDamage = FragTrap::_attackDamage;
+	std::cout << this->_attackDamage << " : " << FragTrap::_attackDamage << std::endl;
+	this->_energyPoints = ScavTrap::_energyPoints;
+	std::cout << this->_energyPoints << " : " << ScavTrap::_energyPoints << std::endl;
 
-	std::cout << "DiamondTrap constructor by name called" << std::endl;
+
+	std::cout << CYAN << "DiamondTrap" << GREEN << " constructor by name called" << RESET << std::endl;
+
 }
 
 DiamondTrap::DiamondTrap(DiamondTrap const& copy)
@@ -40,15 +45,15 @@ DiamondTrap&	DiamondTrap::operator=(DiamondTrap const& add)
 
 DiamondTrap::~DiamondTrap(void)
 {
-	std::cout << "DiamondTrap destructor called" << std::endl;
+	std::cout << CYAN << "DiamondTrap"  << RED << " destructor called" << RESET << std::endl;
 }
 
 /* subject functions */
 
 void	DiamondTrap::whoAmI(void)
 {
-	std::cout << "My name is: " << this->_name << std::endl;
-	std::cout << "My ClapTrap name is: " << ClapTrap::_name << std::endl;
+	std::cout << "\nMy name is: " << GREEN << this->_name << RESET << std::endl;
+	std::cout << "My ClapTrap name is: " << CYAN << ClapTrap::_name << RESET << std::endl;
 }
 
 

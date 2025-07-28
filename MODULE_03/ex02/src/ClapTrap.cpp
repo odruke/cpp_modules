@@ -16,10 +16,13 @@ ClapTrap::ClapTrap(ClapTrap const& add){*this = add;}
 
 ClapTrap&	ClapTrap::operator=(ClapTrap const& add)
 {
-	this->_name = add._name;
-	this->_hitPoints = add._hitPoints;
-	this->_energyPoints = add._energyPoints;
-	this->_attackDamage = add._attackDamage;
+	if (this != &add)
+	{
+		this->_name = add._name;
+		this->_hitPoints = add._hitPoints;
+		this->_energyPoints = add._energyPoints;
+		this->_attackDamage = add._attackDamage;
+	}
 	return *this;
 }
 
@@ -28,11 +31,11 @@ ClapTrap::~ClapTrap(void)
 	std::cout << "ClapTrap destructor called" << std::endl;
 }
 
-/* getters and setters */
-std::string	ClapTrap::getName(void){return this->_name;}
-int	ClapTrap::getHp(void){return this->_hitPoints;}
-int	ClapTrap::getEnergyP(void){return this->_energyPoints;}
-int	ClapTrap::getAttackDmg(void){return this->_attackDamage;}
+/* getters */
+std::string	ClapTrap::getName(void) const {return this->_name;}
+int	ClapTrap::getHp(void) const {return this->_hitPoints;}
+int	ClapTrap::getEnergyP(void) const {return this->_energyPoints;}
+int	ClapTrap::getAttackDmg(void) const {return this->_attackDamage;}
 
 /* subject functions */
 
