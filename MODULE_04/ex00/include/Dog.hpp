@@ -5,11 +5,13 @@
 
 class Dog : public Animal
 {
-private:
-	/* data */
 public:
-	Dog(/* args */);
-	~Dog();
+	Dog(void);
+	Dog(Dog const& copy);
+	~Dog(void);
+	Dog&	operator=(Dog const& copy);
+
+	void	makeSound(void);
 };
 
 

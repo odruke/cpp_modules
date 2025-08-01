@@ -19,10 +19,14 @@ protected:
 	std::string _type;
 public:
 	Animal(void);
-	Animal(std::string const& type);
 	Animal(Animal const& copy);
-	~Animal();
-	Animal	operator=(Animal const& copy);
+	virtual ~Animal(void);
+	Animal&	operator=(Animal const& copy);
+
+	virtual void	makeSound(void);
+
+	std::string	getType(void) const;
+	void	setType(std::string const& type);
 };
 
 #endif
