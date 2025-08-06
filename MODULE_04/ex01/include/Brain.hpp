@@ -2,6 +2,7 @@
 # define BRAIN_HPP
 
 # include <sstream>
+# include <cstdlib>
 # include "colors.hpp"
 
 class Brain
@@ -14,6 +15,9 @@ public:
 	virtual ~Brain();
 
 	Brain&	operator=(Brain const& other);
+
+	std::string const&	getIdea(int const& index) const;
+	void	setIdea(std::string const& newIdea, int const& index);
 };
 
 #endif
