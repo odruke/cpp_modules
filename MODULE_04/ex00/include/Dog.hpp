@@ -11,7 +11,7 @@ public:
 	~Dog(void);
 	Dog&	operator=(Dog const& copy);
 
-	void	makeSound(void);
+	void	makeSound(void) const;
 };
 
 

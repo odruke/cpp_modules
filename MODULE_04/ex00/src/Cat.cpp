@@ -26,6 +26,6 @@ std::cout << MAGENTA << "Cat" << CYAN << " assignment operator called" << RESET 
 }
 
 /* ============== member functions ============= */
-void	Cat::makeSound(void){
+void	Cat::makeSound(void) const{
 	std::cout << MAGENTA << this->_type << RESET << ": Mew! Mew!" << std::endl;
 }

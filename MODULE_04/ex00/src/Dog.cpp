@@ -23,6 +23,6 @@ Dog&	Dog::operator=(Dog const& copy){
 }
 
 /* ============== member functions ============= */
-void	Dog::makeSound(void){
+void	Dog::makeSound(void) const{
 	std::cout << BLUE << this->_type << RESET << ": Woof!, Woof!" << std::endl;
 }

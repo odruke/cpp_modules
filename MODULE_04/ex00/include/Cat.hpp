@@ -11,7 +11,7 @@ public:
 	~Cat(void);
 	Cat&	operator=(Cat const& copy);
 
-	void	makeSound(void);
+	void	makeSound(void) const;
 };
 
 #endif
