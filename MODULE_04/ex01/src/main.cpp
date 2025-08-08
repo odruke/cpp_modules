@@ -63,17 +63,45 @@ int	main()
 	}
 	std::cout << std::endl;
 
-/*============ Schrodinger's cat =============*/
-	std::cout << CYAN << "--- schrodinger's cat ---" << RESET << std::endl;
+/*============ Schrodinger's cat by assingment operator =============*/
+	std::cout << CYAN << "--- schrodinger's cat assingment operator ---" << RESET << std::endl;
 	{
 	Cat cat;
 	{
-		Cat copycat = cat;
+		Cat copycat;
+		copycat = cat;
+		std::cout << std::endl;
+
+		std::cout
+				<< "copycat first thought address-> "
+				<< &copycat.getBrain().getIdea(0) << std::endl;
+		std::cout
+				<< "cat first thought address-> "
+				<< &cat.getBrain().getIdea(0) << std::endl;
+	}
+	std::cout << std::endl;
+
+	std::cout
+			<< cat.getType() << " is alive and thinks in "
+			<< cat.getBrain().getIdea(0) << std::endl;
+	}
+	std::cout << std::endl;
+
+/*============ Schrodinger's cat by copy =============*/
+	std::cout << CYAN << "--- schrodinger's cat by copy ---" << RESET << std::endl;
+	{
+	Cat cat;
+	{
+		Cat copycat(cat);
+		std::cout
+				<< "copycat thinks in "
+				<< cat.getBrain().getIdea(0) << std::endl;
 	}
 	std::cout
 			<< cat.getType() << " is alive and thinks in "
 			<< cat.getBrain().getIdea(0) << std::endl;
 	}
+	std::cout << std::endl;
 
 /*============ End Tests, calling destructors =============*/
 	std::cout << CYAN << "--- End Tests, calling destructors ---" << RESET << std::endl << std::endl;
