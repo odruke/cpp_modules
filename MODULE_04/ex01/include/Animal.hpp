@@ -1,6 +1,7 @@
 #ifndef ANIMAL_HPP
 # define ANIMAL_HPP
 # include "colors.hpp"
+# include "Brain.hpp"
 
 class Animal
 {
@@ -16,6 +17,8 @@ public:
 
 	std::string	getType(void) const;
 	void	setType(std::string const& type);
+
+	virtual Brain&	getBrain(void) const = 0;
 };
 
 #endif

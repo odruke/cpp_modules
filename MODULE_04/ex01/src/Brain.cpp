@@ -34,5 +34,5 @@ std:: string const&	Brain::getIdea(int const& index) const{
 
 void	Brain::setIdea(std::string const& newIdea, int const& index){
 	if (index >= 0 && index < 100)
-		this->_ideas[index] = newIdea[index];
+		this->_ideas[index] = newIdea;
 }

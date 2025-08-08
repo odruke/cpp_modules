@@ -6,9 +6,9 @@ Dog::Dog(void) : Animal(), _brain(new Brain()) {
 			std::cout << "brain allocation failed at: " << __FILE__ << ", " << __LINE__ << std::endl;
 			exit(1);
 	}
-	for (int i = 0; i < 100; i++){
+	for (int i = 0; i < MAX_IDEAS; i++){
 		std::stringstream ss;
-		ss << "dog though n" << i;
+		ss << "dog thought n" << i;
 		_brain->setIdea(ss.str(), i);
 	}
 	this->_type = "Dog";
@@ -20,7 +20,7 @@ Dog::Dog(Dog const& copy) : Animal(copy), _brain(new Brain()){
 			std::cout << "brain allocation failed at: " << __FILE__ << ", " << __LINE__ << std::endl;
 			exit(1);
 	}
-	for (int i = 0; i < 100; i++){
+	for (int i = 0; i < MAX_IDEAS; i++){
 		_brain->setIdea(copy._brain->getIdea(i), i);
 	}
 	std::cout << BLUE << "Dog" << GREEN << " constructor by copy called" << RESET << std::endl;
@@ -37,7 +37,7 @@ Dog&	Dog::operator=(Dog const& copy){
 		Animal::operator=(copy);
 		delete this->_brain;
 		this->_brain = new Brain();
-		for (int i = 0; i < 100; i++){
+		for (int i = 0; i < MAX_IDEAS; i++){
 		_brain->setIdea(copy._brain->getIdea(i), i);
 		}
 	}
@@ -48,4 +48,8 @@ Dog&	Dog::operator=(Dog const& copy){
 /* ============== member functions ============= */
 void	Dog::makeSound(void) const{
 	std::cout << BLUE << this->_type << RESET << ": Woof!, Woof!" << std::endl;
+}
+
+Brain&	Dog::getBrain(void) const{
+	return *this->_brain;
 }

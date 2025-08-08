@@ -6,9 +6,9 @@ Cat::Cat(void) : Animal(), _brain(new Brain()) {
 			std::cout << "brain allocation failed at: " << __FILE__ << ", " << __LINE__ << std::endl;
 			exit(1);
 	}
-	for (int i = 0; i < 100; i++){
+	for (int i = 0; i < MAX_IDEAS; i++){
 		std::stringstream ss;
-		ss << "cat though n" << i;
+		ss << "cat thought n" << i;
 		_brain->setIdea(ss.str(), i);
 	}
 	this->_type = "Cat";
@@ -20,7 +20,7 @@ Cat::Cat(Cat const& copy) : Animal(copy), _brain(new Brain()){
 			std::cout << "brain allocation failed at: " << __FILE__ << ", " << __LINE__ << std::endl;
 			exit(1);
 	}
-	for (int i = 0; i < 100; i++){
+	for (int i = 0; i < MAX_IDEAS; i++){
 		_brain->setIdea(copy._brain->getIdea(i), i);
 	}
 	std::cout << MAGENTA << "Cat" << GREEN << " copy constructor called" << RESET << std::endl;
@@ -37,7 +37,7 @@ Cat&	Cat::operator=(Cat const& copy){
 		Animal::operator=(copy);
 		delete this->_brain;
 		this->_brain = new Brain();
-		for (int i = 0; i < 100; i++){
+		for (int i = 0; i < MAX_IDEAS; i++){
 		_brain->setIdea(copy._brain->getIdea(i), i);
 		}
 	}
@@ -48,4 +48,8 @@ Cat&	Cat::operator=(Cat const& copy){
 /* ============== member functions ============= */
 void	Cat::makeSound(void) const{
 	std::cout << MAGENTA << this->_type << RESET << ": Mew! Mew!" << std::endl;
+}
+
+Brain&	Cat::getBrain(void) const{
+	return *this->_brain;
 }

@@ -4,11 +4,12 @@
 # include <sstream>
 # include <cstdlib>
 # include "colors.hpp"
+# define MAX_IDEAS 100
 
 class Brain
 {
 private:
-	std::string	_ideas[100];
+	std::string	_ideas[MAX_IDEAS];
 public:
 	Brain(void);
 	Brain(Brain const& copy);
