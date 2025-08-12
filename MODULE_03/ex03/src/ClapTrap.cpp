@@ -3,12 +3,14 @@
 ClapTrap::ClapTrap(void)
 	: _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
+	this->_initialHp = _hitPoints;
 	std::cout << WHITE << "ClapTrap" << GREEN << " default constructor called" << RESET << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name)
 	: _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
+	this->_initialHp = _hitPoints;
 	std::cout << WHITE << "ClapTrap" << GREEN << " constructor by name called" << RESET << std::endl;
 }
 
@@ -88,3 +90,5 @@ void	ClapTrap::takeDamage(unsigned int ammount)
 		}
 	}
 }
+
+int	ClapTrap::getInitialHp(void) const {return this->_initialHp;}

@@ -23,6 +23,8 @@ protected:
 	unsigned int	_hitPoints;
 	unsigned int	_energyPoints;
 	unsigned int	_attackDamage;
+private:
+	unsigned int	_initialHp;
 public:
 	ClapTrap(void);
 	ClapTrap(std::string name);
@@ -34,6 +36,7 @@ public:
 	int getHp(void) const;
 	int getEnergyP(void) const;
 	int getAttackDmg(void) const;
+	int getInitialHp(void) const;
 
 	void attack(const std::string& target);
 	void takeDamage(unsigned int amount);

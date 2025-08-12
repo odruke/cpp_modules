@@ -13,7 +13,8 @@ DiamondTrap::DiamondTrap(void)
 DiamondTrap::DiamondTrap(std::string const& name)
 	: ClapTrap(name + "_clap_name"), ScavTrap(name + "_Scav_name"), FragTrap(name + "_Frag_name"), _name(name)
 {
-	this->_hitPoints = FragTrap::_hitPoints;
+	// this->_hitPoints = FragTrap::_hitPoints;
+	this->_hitPoints = ClapTrap::getInitialHp();
 	std::cout << this->_hitPoints << " : " << FragTrap::_hitPoints << std::endl;
 	this->_attackDamage = FragTrap::_attackDamage;
 	std::cout << this->_attackDamage << " : " << FragTrap::_attackDamage << std::endl;
