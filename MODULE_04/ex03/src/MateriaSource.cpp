@@ -5,17 +5,17 @@ MateriaSource::MateriaSource(void){
 	for (int i = 0; i < ARRAY_SIZE(this->_materias); i++){
 		this->_materias[i] = NULL;
 	}
-	std::cout << MAGENTA << "\nMateriaSource" << GREEN << " constructor by name called" << RESET << std::endl;
+	std::cout << MAGENTA << "MateriaSource" << GREEN << " constructor by name called" << RESET << std::endl;
 }
 
 MateriaSource::MateriaSource(MateriaSource const& copy){
 	this->copy_materias(copy);
-	std::cout << MAGENTA << "\nMateriaSource" << GREEN << " constructor by copy called" << RESET << std::endl;
+	std::cout << MAGENTA << "MateriaSource" << GREEN << " constructor by copy called" << RESET << std::endl;
 }
 
 MateriaSource::~MateriaSource(void){
 	this->delete_materias();
-	std::cout << MAGENTA << "MateriaSource" << RED << " destructor called\n" << RESET << std::endl;
+	std::cout << MAGENTA << "MateriaSource" << RED << " destructor called" << RESET << std::endl;
 }
 
 /* ============== assignment operator ============= */
@@ -24,7 +24,7 @@ MateriaSource&	MateriaSource::operator=(MateriaSource const& other){
 		return *this;
 	this->delete_materias();
 	this->copy_materias(other);
-	std::cout << MAGENTA << "MateriaSource" << BLUE << " assignment operator called\n" << RESET << std::endl;
+	std::cout << MAGENTA << "MateriaSource" << BLUE << " assignment operator called" << RESET << std::endl;
 	return *this;
 }
 

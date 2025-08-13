@@ -2,15 +2,15 @@
 
 /* ========== Constructors and destructor ==============*/
 Cure::Cure(void) : AMateria("cure"){
-	std::cout << YELLOW << "cure" << GREEN << " default constructor called\n" << RESET << std::endl;
+	std::cout << YELLOW << "cure" << GREEN << " default constructor called" << RESET << std::endl;
 }
 
 Cure::Cure(Cure const& copy) : AMateria(copy){
-	std::cout << YELLOW << "cure" << GREEN << " constructor by type called\n" << RESET << std::endl;
+	std::cout << YELLOW << "cure" << GREEN << " constructor by type called" << RESET << std::endl;
 }
 
 Cure::~Cure(void){
-	std::cout << YELLOW << "\ncure" << RED << " destructor called" << RESET << std::endl;
+	std::cout << YELLOW << "cure" << RED << " destructor called" << RESET << std::endl;
 }
 
 /* ============== assignment operator ============= */
@@ -27,5 +27,5 @@ AMateria* Cure::clone(void) const{
 }
 
 void	Cure::use(ICharacter& target){
-	std::cout << "* heals bob's wounds " << target.getName() << " *" << std::endl;
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }

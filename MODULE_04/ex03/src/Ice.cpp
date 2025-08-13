@@ -2,15 +2,15 @@
 
 /* ========== Constructors and destructor ==============*/
 Ice::Ice(void) : AMateria("ice"){
-	std::cout << CYAN << "Ice" << GREEN << " default constructor called\n" << RESET << std::endl;
+	std::cout << CYAN << "Ice" << GREEN << " default constructor called" << RESET << std::endl;
 }
 
 Ice::Ice(Ice const& copy) : AMateria(copy){
-	std::cout << CYAN << "Ice" << GREEN << " constructor by type called\n" << RESET << std::endl;
+	std::cout << CYAN << "Ice" << GREEN << " constructor by type called" << RESET << std::endl;
 }
 
 Ice::~Ice(void){
-	std::cout << CYAN << "\nIce" << RED << " destructor called" << RESET << std::endl;
+	std::cout << CYAN << "Ice" << RED << " destructor called" << RESET << std::endl;
 }
 
 /* ============== assignment operator ============= */

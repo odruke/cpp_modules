@@ -6,17 +6,17 @@ Character::Character(std::string const& name) : _name(name){
 	for (int i = 0; i < ARRAY_SIZE(this->_materias); i++){
 		this->_materias[i] = NULL;
 	}
-	std::cout << ORANGE << "\nCharacter" << GREEN << " constructor by name called" << RESET << std::endl;
+	std::cout << ORANGE << "Character" << GREEN << " constructor by name called" << RESET << std::endl;
 }
 
 Character::Character(Character const& copy) : _name(copy._name){
 	this->copy_materias(copy);
-	std::cout << ORANGE << "\nCharacter" << GREEN << " constructor by copy called" << RESET << std::endl;
+	std::cout << ORANGE << "Character" << GREEN << " constructor by copy called" << RESET << std::endl;
 }
 
 Character::~Character(void) {
 	this->delete_materias();
-	std::cout << ORANGE << "Character" << RED << " destructor called\n" << RESET << std::endl;
+	std::cout << ORANGE << "Character" << RED << " destructor called" << RESET << std::endl;
 }
 
 /* ============== assignment operator ============= */
@@ -26,7 +26,7 @@ Character&	Character::operator=(Character const& other){
 	this->_name = other._name;
 	this->delete_materias();
 	this->copy_materias(other);
-	std::cout << ORANGE << "Character" << BLUE << " assignment operator called\n" << RESET << std::endl;
+	std::cout << ORANGE << "Character" << BLUE << " assignment operator called" << RESET << std::endl;
 	return *this;
 }
 
@@ -52,7 +52,7 @@ void	Character::unequip(int idx){
 }
 
 void	Character::use(int idx, ICharacter& target){
-	if (idx > ARRAY_SIZE(this->_materias) || idx < 0)
+	if (idx >= ARRAY_SIZE(this->_materias) || idx < 0)
 		return;
 	if (this->_materias[idx])
 		this->_materias[idx]->use(target);

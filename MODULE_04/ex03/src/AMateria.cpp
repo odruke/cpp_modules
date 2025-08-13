@@ -30,10 +30,6 @@ std::string const&	AMateria::getType(void) const {
 	return this->_type;
 }
 
-/* ============== member functions ============= */
-// AMateria* AMateria::clone(void) const{
-// 	//to implement
-// }
 
 void	AMateria::use(ICharacter& target){
 	(void)target;
